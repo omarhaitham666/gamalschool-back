@@ -38,13 +38,20 @@ class AuthController extends Controller
 
         if(!$user  || !Hash::check($request->password,$user->password)){
             return[
-                'message' => ' كلمة المرور غير مطابقة للبريد الالكتروني'
+                'status'=>false,
+                'errors' =>[
+                    'email'=>[
+                        'كلمة المرور غير مطابقة للبريد الالكتروني'
+                    ]
+                ] 
             ];
         }
 
 
         $token=$user->createToken($user->name);
+        
         return[
+            'status'=>true,
             'user'=>$user,
             'token'=>$token->plainTextToken,
         ];
@@ -57,6 +64,6 @@ class AuthController extends Controller
         ];
     }
 
-}
 
+}
 
