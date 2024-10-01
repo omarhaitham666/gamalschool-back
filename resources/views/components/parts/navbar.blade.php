@@ -6,15 +6,21 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav m-auto me-5 mb-2 mb-lg-0">
+          @auth
+              
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{{route('Team.index')}}">فريق العمل</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="{{route('Achievement.index')}}">الانجازات</a>
           </li>
+          @endauth
+
         </ul>
        
-          <a class="nav-link active" href="">تسجيل خروج</a>
+        @auth
+        <a class="nav-link active" href="">تسجيل خروج</a>            
+        @endauth
         
       </div>
     </div>
