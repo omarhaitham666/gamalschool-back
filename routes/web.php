@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\TeamController;
+// use App\Http\Controllers\TeamController;
 use App\Http\Controllers\Web\AuthController as WebAuthController;
 use App\Http\Controllers\Web\TeamController as WebTeamController;
 use App\HTTP\Controllers\Web\AchievementController as WebAchievementController;
@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('index');
 // });
+
+Route::get('/', [WebAuthController::class, 'login'])->name('dashboard.login'); // update system to be make login is the index page
+
 Route::prefix('Team')->group(function(){
 Route::get('all',[WebTeamController::class,'index'])->name('Team.index');
 Route::get('create',[WebTeamController::class,'create'])->name('Team.create');
@@ -27,7 +30,7 @@ Route::prefix('Achievement')->group(function(){
     Route::delete('{id}/delete',[WebAchievementController::class,'destroy'])->name('Achievement.destroy');
     Route::get('{id}/edit',[WebAchievementController::class,'edit'])->name('Achievement.edit');
     Route::put('{id}/update',[WebAchievementController::class,'update'])->name('Achievement.update');
-    });
+});
     
 
 
@@ -41,7 +44,6 @@ Route::prefix('Achievement')->group(function(){
 // Route::get('/login',[WebAuthController::class,'login'])->name('Dashboard.login');
 
 
-Route::get('/login', [WebAuthController::class, 'login'])->name('dashboard.login');
 
 
 

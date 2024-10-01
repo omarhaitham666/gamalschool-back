@@ -56,7 +56,7 @@ use Illuminate\Http\Request;
 use App\Models\Team;
 use Illuminate\Support\Facades\Storage;
 
-class TeamController extends Controller
+class TeamApiController extends Controller // ichange class name to match file name
 {
     /**
      * Display a listing of the resource.
