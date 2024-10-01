@@ -13,6 +13,9 @@
             <a class="nav-link active" href="{{route('Achievement.index')}}">الانجازات</a>
           </li>
         </ul>
+       
+          <a class="nav-link active" href="">تسجيل خروج</a>
+        
       </div>
     </div>
   </nav>

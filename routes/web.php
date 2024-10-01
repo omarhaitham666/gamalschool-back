@@ -32,11 +32,16 @@ Route::prefix('Achievement')->group(function(){
 
 
 // Route::prefix('dashboard')->group(function(){
-//     Route::get('/Login',[WebAuthController::class,'login'])->name('dashboard.login');
+//     Route::get('/login',[WebAuthController::class,'login'])->name('dashboard.login');
 //     Route::middleware('auth')->group(function(){
 
 //     });
 // });
+
+// Route::get('/login',[WebAuthController::class,'login'])->name('Dashboard.login');
+
+
+Route::get('/login', [WebAuthController::class, 'login'])->name('dashboard.login');
 
 
 
