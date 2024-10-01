@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\TeamController as APITeamController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TeamController;
 use Illuminate\Http\Request;
@@ -17,7 +18,8 @@ Route::get('user',function(Request $request){
 Route::post('register',[AuthController::class,'register']);
 Route::post('login',[AuthController::class,'login']);
 Route::post('logout',[AuthController::class,'logout'])->middleware('auth:sanctum');
-// Route::get('users',[UserController::class,'index']);
-// Route::get('users/{id}',[UserController::class,'show']);
-Route::apiResource('teams', TeamController::class);
+
+
+Route::apiResource('teams', APITeamController::class);
+
 
