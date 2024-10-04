@@ -19,7 +19,7 @@
         </ul>
        
         @auth
-        <a class="nav-link active" href="">تسجيل خروج</a>            
+        <a class="nav-link active" href="{{route('logout')}}">تسجيل خروج</a>            
         @endauth
         
       </div>

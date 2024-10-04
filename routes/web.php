@@ -11,11 +11,13 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [WebAuthController::class, 'login'])->name('dashboard.login'); // update system to be make login is the index page
+Route::post('/', [WebAuthController::class, 'handle_login'])->name('dashboard.handle.login'); // update system to be make login is the index page
 
 
 Route::prefix('dashboard')->group(function(){
     Route::middleware('auth')->group(function(){
         //app system log out
+        Route::get('logout',[WebAuthController::class,'logout'])->name('logout');
         
         //app utlites controllers 
         Route::prefix('Team')->group(function(){
@@ -40,7 +42,6 @@ Route::prefix('dashboard')->group(function(){
     });
 });
 
-    
 
 
 // Route::prefix('dashboard')->group(function(){
