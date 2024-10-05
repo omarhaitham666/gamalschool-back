@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 
 class ServiceController extends Controller
 {
-    // تخزين البيانات
+    
     public function store(Request $request)
     {
-        // تحقق من البيانات المدخلة
+        
         $validatedData = $request->validate([
             'data' => 'required|array',
             'data.FullName' => 'required|string|min:3|max:80',
@@ -21,23 +21,23 @@ class ServiceController extends Controller
             'type' => 'required|string',
         ]);
     
-        // إنشاء خدمة جديدة مع تعيين البيانات والنوع
+
         $service = Service::create([
-            'data' => $validatedData['data'], // تخزين البيانات في عمود 'data'
-            'type' => $validatedData['type'], // تعيين النوع
+            'data' => $validatedData['data'], 
+            'type' => $validatedData['type'], 
         ]);
     
         return response()->json($service, 201);
     }
 
-    // استرجاع جميع البيانات
+    
     public function index()
     {
-        // إرجاع جميع الخدمات مع نوعها
+        
         return Service::all();
     }
 
-    // تحديث البيانات
+   
     public function update(Request $request, $id)
     {
         $service = Service::findOrFail($id);
@@ -47,16 +47,16 @@ class ServiceController extends Controller
             'type' => 'required|string',
         ]);
 
-        // تحديث البيانات مع الحفاظ على البيانات الأخرى
+        
         $service->update([
             'data' => $validatedData['data'],
-            'type' => $validatedData['type'], // تحديث النوع إذا لزم الأمر
+            'type' => $validatedData['type'], 
         ]);
 
         return response()->json($service);
     }
 
-    // حذف البيانات
+    
     public function destroy($id)
     {
         $service = Service::findOrFail($id);

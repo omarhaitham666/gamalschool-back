@@ -2,6 +2,7 @@
 // use App\Http\Controllers\TeamController;
 use App\Http\Controllers\API\TeamApiController as APITeamController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ServiceController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -38,3 +39,5 @@ Route::apiResource('teams', APITeamController::class);
     // Route لحذف خدمة معينة (DELETE)
     Route::delete('/services/{id}', [ServiceController::class, 'destroy']);
 
+
+    Route::apiResource('messages', MessageController::class);
