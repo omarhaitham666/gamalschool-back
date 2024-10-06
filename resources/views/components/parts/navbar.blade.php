@@ -14,10 +14,17 @@
           <li class="nav-item">
             <a class="nav-link active" href="{{route('Achievement.index')}}">الانجازات</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{{route('Tablet.index')}}">خدمة التابلت</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{{route('Uniform.index')}}">خدمة الزي</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{{route('Message.index')}}">خدمة الرسائل</a>
+          </li>
           @endauth
-
         </ul>
-       
         @auth
         <a class="nav-link active" href="{{route('logout')}}">تسجيل خروج</a>            
         @endauth
