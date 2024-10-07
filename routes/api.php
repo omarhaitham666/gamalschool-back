@@ -1,6 +1,7 @@
 <?php
 // use App\Http\Controllers\TeamController;
 use App\Http\Controllers\API\TeamApiController as APITeamController;
+use App\Http\Controllers\API\AchievementApiController as APIAchievementController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ServiceController;
@@ -22,6 +23,7 @@ Route::post('logout',[AuthController::class,'logout'])->middleware('auth:sanctum
 
 
 Route::apiResource('teams', APITeamController::class);
+Route::apiResource('achievements', APIAchievementController::class);
 
 
 
