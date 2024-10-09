@@ -41,5 +41,4 @@ Route::apiResource('achievements', APIAchievementController::class);
     // Route لحذف خدمة معينة (DELETE)
     Route::delete('/services/{id}', [ServiceController::class, 'destroy']);
 
-
     Route::apiResource('messages', MessageController::class);
